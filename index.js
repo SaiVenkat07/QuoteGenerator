@@ -1,4 +1,4 @@
-const quoteContainer = document.getElementById('quote-contaier');
+const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const instaBtn = document.getElementById('instagram');
@@ -8,19 +8,19 @@ const newQuoteBtn = document.getElementById('new-quote');
 let apiQuotes = [];
 
 //show loading
-// function loading() {
-//     loader.hidden = false;
-//     quoteContainer.hidden = true;
-// }
+function loading() {
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
 
-// //hide loading
-// function complete() {
-//     quoteContainer.hidden = false;
-//     loader.hidden = true;
-// } 
+//hide loading
+function complete() {
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+} 
 
 function newQuote() {
-    //loading();
+    loading();
     // Create a new quote
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     //check if author field is blank and replace with 'unknown'
@@ -37,12 +37,12 @@ function newQuote() {
     }
     //set quote, hide loader
     quoteText.textContent = quote.text;
-    //complete();
+    complete();
 }
 
 //Get Quote From API
 async function getQuotes() {
-    //loading();
+    loading();
     const apiUrl = 'https://jacintodesign.github.io/quotes-api/data/quotes.json';
     try {
         const response = await fetch(apiUrl);
