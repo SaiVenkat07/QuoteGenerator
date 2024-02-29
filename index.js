@@ -3,7 +3,7 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const instaBtn = document.getElementById('instagram');
 const newQuoteBtn = document.getElementById('new-quote');
-//const loader = document.getElementById('loader');
+const loader = document.getElementById('loader');
 
 let apiQuotes = [];
 
